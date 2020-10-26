@@ -10,12 +10,12 @@ script:
 
 after_success:
     - docker build -t leamedhurst/multi-client ./client
-    - docker build -t leamedhurst/multi-ngnix ./ngnix
+    - docker build -t leamedhurst/multi-ngnix ./nginx
     - docker build -t leamedhurst/multi-server ./server
     - docker build -t leamedhurst/multi-worker ./worker
     - echo "$DOCKER_PASSWORD" | docker login -u "@DOCKER_ID" --password-stdin
     - docker push leamedhurst/multi-client
-    - docker push leamedhurst/multi-ngnix
+    - docker push leamedhurst/multi-nginx
     - docker push leamedhurst/multi-server
     - docker push leamedhurst/multi-worker
 
