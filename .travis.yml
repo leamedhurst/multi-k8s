@@ -20,6 +20,7 @@ after_success:
     - docker push leamedhurst/multi-server
     - docker push leamedhurst/multi-worker
 
+    #deploy section
 deploy:
     provider: elasticbeanstalk
     region: 'us-east-1'
